@@ -2,32 +2,45 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: rgb(229, 231, 235)
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+#filterDropdown {
+  max-height: 400px; /* Set maximum height for the dropdown */
+  overflow-y: auto; /* Enable vertical scrolling */
+  top: calc(100% + 10px); /* Position the dropdown below its parent */
+  left: -10px; /* Position the dropdown flush with its parent's left edge */
+  z-index: 10; /* Ensure the dropdown appears above other content */
+  background-color: white; /* Set the background color */
+  border-radius: 8px; /* Add rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a shadow */
+}
+#filterDropdown1 {
+  max-height: 400px; /* Set maximum height for the dropdown */
+  overflow-y: auto; /* Enable vertical scrolling */
+  top: calc(100% + 10px); /* Position the dropdown below its parent */
+  left: -10px; /* Position the dropdown flush with its parent's left edge */
+  z-index: 10; /* Ensure the dropdown appears above other content */
+  background-color: white; /* Set the background color */
+  border-radius: 8px; /* Add rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a shadow */
+}
+
+#editDropdown {
+  max-height: 400px; /* Set maximum height for the dropdown */
+  overflow-y: auto; /* Enable vertical scrolling */
+  top: calc(100% + 10px); /* Position the dropdown below its parent */
+  left: -10px; /* Position the dropdown flush with its parent's left edge */
+  z-index: 10; /* Ensure the dropdown appears above other content */
+  background-color: white; /* Set the background color */
+  border-radius: 8px; /* Add rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a shadow */
 }
