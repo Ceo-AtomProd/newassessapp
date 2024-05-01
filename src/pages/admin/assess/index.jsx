@@ -208,41 +208,12 @@ export default function Index() {
     const handleCustomRangeChange = (index, field, value) => {
       const updatedCustomRanges = [...selectData.range];
       updatedCustomRanges[index][field] = value;
-      if (
-        index > 0 &&
-        field === "min" &&
-        value <= updatedCustomRanges[index - 1].max
-      ) {
-        console.error(
-          "Min value should be greater than the max value of the previous range."
-        );
-        return;
-      }
-      if (
-        index < updatedCustomRanges.length - 1 &&
-        field === "max" &&
-        value >= updatedCustomRanges[index + 1].min
-      ) {
-        console.error(
-          "Max value should be less than the min value of the next range."
-        );
-        return;
-      }
-      if (index === updatedCustomRanges.length - 1 && field === "max") {
-        const maxMarks =
-          selectData.questions.length * (selectData.options.length - 1);
-        if (value > maxMarks) {
-          console.error(
-            "Max value of the last range cannot exceed the maximum marks."
-          );
-          return;
-        }
-      }
       setSelectData((prevState) => ({
         ...prevState,
         range: updatedCustomRanges,
       }));
     };
+    
 
     return (
       <div
@@ -750,36 +721,6 @@ export default function Index() {
     const handleCustomRangeChange = (index, field, value) => {
       const updatedCustomRanges = [...createData.range];
       updatedCustomRanges[index][field] = value;
-      if (
-        index > 0 &&
-        field === "min" &&
-        value <= updatedCustomRanges[index - 1].max
-      ) {
-        console.error(
-          "Min value should be greater than the max value of the previous range."
-        );
-        return;
-      }
-      if (
-        index < updatedCustomRanges.length - 1 &&
-        field === "max" &&
-        value >= updatedCustomRanges[index + 1].min
-      ) {
-        console.error(
-          "Max value should be less than the min value of the next range."
-        );
-        return;
-      }
-      if (index === updatedCustomRanges.length - 1 && field === "max") {
-        const maxMarks =
-          createData.questions.length * (createData.options.length - 1);
-        if (value > maxMarks) {
-          console.error(
-            "Max value of the last range cannot exceed the maximum marks."
-          );
-          return;
-        }
-      }
       setCreateData((prevState) => ({
         ...prevState,
         range: updatedCustomRanges,

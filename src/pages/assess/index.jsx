@@ -3,6 +3,8 @@ import axios from "axios";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import ListComp from "@/components/ListComp";
+import Image from "next/image";
+import category from "@/libs/category";
 
 export const getServerSideProps = async ({ query }) => {
   const curruntPage = Number(query.page) || 1;
@@ -100,9 +102,95 @@ export default function Asess({ curruntPage }) {
       </div>
     ));
   };
+  const text = "Hy I Have Query"
 
   return (
-    <section className="text-gray-400  body-font">
+    <>
+    <main className={`min-h-screen`}>
+      <section class="text-gray-600 bg-blue-200 body-font flex items-center">
+        <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+          <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+            <h1 class="title-font md:text-6xl text-3xl mb-4 font-medium text-gray-900">
+              We make it easier for you to self assess every
+              psychological issue.
+            </h1>
+            <p class="mb-8 leading-relaxed md:block hidden">
+            Offering over 100 assessments in various categories, for a wide range of disorders, mental illnesses, and various personality factors. We are planning to offer our own Professional Assessments in the near future. We also offer western assessments with their results, which are widely popular.
+            </p>
+            <div class="flex justify-center">
+              <Link href={`https://wa.me/918120148209?text=${text}`} class="ml-4 flex justify-center items-center text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style={{fill: "rgba(11, 239, 50, 1)"}}><path fill-rule="evenodd" clip-rule="evenodd" d="M18.403 5.633A8.919 8.919 0 0 0 12.053 3c-4.948 0-8.976 4.027-8.978 8.977 0 1.582.413 3.126 1.198 4.488L3 21.116l4.759-1.249a8.981 8.981 0 0 0 4.29 1.093h.004c4.947 0 8.975-4.027 8.977-8.977a8.926 8.926 0 0 0-2.627-6.35m-6.35 13.812h-.003a7.446 7.446 0 0 1-3.798-1.041l-.272-.162-2.824.741.753-2.753-.177-.282a7.448 7.448 0 0 1-1.141-3.971c.002-4.114 3.349-7.461 7.465-7.461a7.413 7.413 0 0 1 5.275 2.188 7.42 7.42 0 0 1 2.183 5.279c-.002 4.114-3.349 7.462-7.461 7.462m4.093-5.589c-.225-.113-1.327-.655-1.533-.73-.205-.075-.354-.112-.504.112s-.58.729-.711.879-.262.168-.486.056-.947-.349-1.804-1.113c-.667-.595-1.117-1.329-1.248-1.554s-.014-.346.099-.458c.101-.1.224-.262.336-.393.112-.131.149-.224.224-.374s.038-.281-.019-.393c-.056-.113-.505-1.217-.692-1.666-.181-.435-.366-.377-.504-.383a9.65 9.65 0 0 0-.429-.008.826.826 0 0 0-.599.28c-.206.225-.785.767-.785 1.871s.804 2.171.916 2.321c.112.15 1.582 2.415 3.832 3.387.536.231.954.369 1.279.473.537.171 1.026.146 1.413.089.431-.064 1.327-.542 1.514-1.066.187-.524.187-.973.131-1.067-.056-.094-.207-.151-.43-.263"></path></svg> Now
+              </Link>
+            </div>
+          </div>
+          <div class="lg:max-w-lg h-full lg:w-full md:w-1/2 w-5/6 bg-white relative">
+            <div className="fade-left-to-right  w-full h-24 md:w-44 md:h-full absolute"></div>
+            <Image 
+            width={500}
+            height={500}
+            priority
+              class="object-cover object-center rounded w-full h-full"
+              alt="hero"
+              src="/hero.jpg"
+            />
+          </div>
+        </div>
+      </section>
+      <section class="text-gray-600 body-font bg-blue-100">
+      <div class="container px-5 py-24 mx-auto">
+        <div class="flex flex-col text-center w-full ">
+          <h1 class="sm:text-3xl text-3xl font-medium title-font mb-4 text-gray-900">
+            Categories
+          </h1>
+          <p class="lg:w-2/3 mx-auto leading-relaxed text-base md:block hidden mb-10">
+            This are the categories we offer right now, later on it will move to
+            12 different categories with to cover all the areas of life .
+          </p>
+        </div>
+        <div class="flex flex-wrap justify-center items-center -m-4">
+          <div class="portfolio-container">
+            {category?.map((i) => (
+              <Link key={i.link} onClick={()=>{setFilter(i.title)}} href={`/assess#tests`}>
+              <div
+                
+                class="portfolio-box"
+                data-sr-id="14"
+                style={{
+                  visibility: "visible",
+                  opacity: 1,
+                  transform:
+                    "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)",
+                  transition:
+                    "opacity 2s cubic-bezier(0.5, 0, 0, 1) 0.2s, transform 2s cubic-bezier(0.5, 0, 0, 1) 0.2s",
+                }}
+              >
+                <Image width={500} height={500} priority src={i.img} alt="" />
+                <div class="portfolio-layar">
+                  <h4>{i.title}</h4>
+
+                  <Link onClick={()=>{setFilter(i.title)}} href={`/assess#tests`}>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      style={{ fill: "#058eff" }}
+                    >
+                      <path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"></path>
+                      <path d="M9.293 7.707 13.586 12l-4.293 4.293 1.414 1.414L16.414 12l-5.707-5.707z"></path>
+                    </svg>
+                  </Link>
+                </div>
+              </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+      </main>
+    <section id="tests" className="text-gray-400  body-font">
+    
       <form className="py-5 px-2 md:px-40">
         <div className="relative">
           <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
@@ -151,7 +239,7 @@ export default function Asess({ curruntPage }) {
                   clipRule="evenodd"
                 />
               </svg>
-              Filter
+              {filter ? filter : "Filter"}
               <svg
                 className="-mr-1 ml-1.5 w-5 h-5"
                 fill="currentColor"
@@ -203,6 +291,7 @@ export default function Asess({ curruntPage }) {
         </div>
       </form>
       <div className="container px-5 py-10 mx-auto flex flex-wrap gap-5 justify-center min-h-[50vh]">
+
         {data &&
           data.length !== 0 &&
           data?.map((item) => (
@@ -351,5 +440,6 @@ export default function Asess({ curruntPage }) {
         </div>
       )}
     </section>
+    </>
   );
 }
