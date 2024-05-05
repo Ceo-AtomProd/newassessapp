@@ -24,7 +24,7 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <Link href="/asess" className="hover:underline me-4 md:me-6">
+              <Link href="/assess" className="hover:underline me-4 md:me-6">
                 Assessments
               </Link>
             </li>
@@ -34,7 +34,7 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <Link href="/worksheet" className="hover:underline">
+              <Link href="/contact" className="hover:underline">
                 Contact
               </Link>
             </li>

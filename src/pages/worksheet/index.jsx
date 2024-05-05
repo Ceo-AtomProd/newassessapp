@@ -56,24 +56,23 @@ export default function Worksheet({ curruntPage }) {
 
   return (
     <>
-      <section className="bg-gray-300 md:px-20">
-        <div className="container mx-auto flex px-5 py-5 md:flex-row flex-col items-center">
+      <section className="bg-gray-100 md:px-20">
+        <div className="container mx-auto flex px-5 lg:px-32 py-5 md:flex-row flex-col items-center">
           <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
             <h1 className="title-font font-bold md:text-5xl text-4xl mb-4 text-blue-600">
-             Therapy tools for
-              <br/>
+              Therapy tools for
+              <br />
               <span>Mental Health Professionals</span>
             </h1>
             <p className="mb-8 leading-relaxed text-blue-600 text-lg font-semibold">
-             For Therapist, By Therapists
+              For Therapist, By Therapists
             </p>
-            <div className="flex justify-center">
-              <form class="flex items-center max-w-sm mx-auto">
+            <div className="flex w-1/2 justify-center">
+              <form class="flex items-center w-full mx-auto">
                 <label for="simple-search" class="sr-only">
                   Search
                 </label>
                 <div class="relative w-full">
-                  
                   <input
                     type="text"
                     id="simple-search"
@@ -85,6 +84,10 @@ export default function Worksheet({ curruntPage }) {
                   />
                 </div>
                 <Link
+                  onClick={()=>{
+                    setData(null)
+                    loadData()
+                  }}
                   href="#mainbox"
                   class="p-2.5 ms-2 text-sm font-medium text-white bg-blue-700 rounded-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                 >
@@ -112,85 +115,76 @@ export default function Worksheet({ curruntPage }) {
             <img
               className="object-cover object-center rounded"
               alt="hero"
-              src="https://dummyimage.com/720x600"
+              src="/work-page.png"
             />
           </div>
         </div>
       </section>
-      <section className="text-gray-600 body-font bg-gray-300">
-      <div className="container md:px-20 px-5 mx-auto flex flex-col justify-center items-center">
-        <div className="flex flex-col w-1/2 text-center  mb-20">
-          <h1 className="text-3xl md:text-5xl font-medium title-font text-blue-600">Therapy Worksheets, Audio, Activities, and more..</h1>
-        </div>
-        <div className="flex  flex-wrap -m-4">
-          <div className="p-4 md:w-1/3">
-            <div className="flex rounded-lg h-full bg-gray-100 p-8 flex-col">
-              <div className="flex items-center mb-3">
-                <div className="w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-blue-500 text-white flex-shrink-0">
-                  <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-5 h-5" viewBox="0 0 24 24">
-                    <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
-                  </svg>
-                </div>
-                <h2 className="text-gray-900 text-lg title-font font-medium">Shooting Stars</h2>
-              </div>
-              <div className="flex-grow">
-                <p className="leading-relaxed text-base">Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub indxgo juice poutine.</p>
-                <a className="mt-3 text-blue-500 inline-flex items-center">Learn More
-                  <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 ml-2" viewBox="0 0 24 24">
-                    <path d="M5 12h14M12 5l7 7-7 7"></path>
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div className="p-4 md:w-1/3">
-            <div className="flex rounded-lg h-full bg-gray-100 p-8 flex-col">
-              <div className="flex items-center mb-3">
-                <div className="w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-blue-500 text-white flex-shrink-0">
-                  <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-5 h-5" viewBox="0 0 24 24">
-                    <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
-                    <circle cx="12" cy="7" r="4"></circle>
-                  </svg>
-                </div>
-                <h2 className="text-gray-900 text-lg title-font font-medium">The Catalyzer</h2>
-              </div>
-              <div className="flex-grow">
-                <p className="leading-relaxed text-base">Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub indxgo juice poutine.</p>
-                <a className="mt-3 text-blue-500 inline-flex items-center">Learn More
-                  <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 ml-2" viewBox="0 0 24 24">
-                    <path d="M5 12h14M12 5l7 7-7 7"></path>
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div className="p-4 md:w-1/3">
-            <div className="flex rounded-lg h-full bg-gray-100 p-8 flex-col">
-              <div className="flex items-center mb-3">
-                <div className="w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-blue-500 text-white flex-shrink-0">
-                  <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-5 h-5" viewBox="0 0 24 24">
-                    <circle cx="6" cy="6" r="3"></circle>
-                    <circle cx="6" cy="18" r="3"></circle>
-                    <path d="M20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12"></path>
-                  </svg>
-                </div>
-                <h2 className="text-gray-900 text-lg title-font font-medium">Neptune</h2>
-              </div>
-              <div className="flex-grow">
-                <p className="leading-relaxed text-base">Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub indxgo juice poutine.</p>
-                <a className="mt-3 text-blue-500 inline-flex items-center">Learn More
-                  <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 ml-2" viewBox="0 0 24 24">
-                    <path d="M5 12h14M12 5l7 7-7 7"></path>
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
-      <section id="mainbox" className="text-gray-400 body-font flex flex-col md:flex-row py-20">
+      <section className="text-gray-600 body-font bg-gray-100">
+        <div className="container md:px-20 px-5 py-10 mx-auto flex flex-col justify-center items-center">
+          <div className="flex flex-col md:w-1/2 text-center  mb-5">
+            <h1 className="text-3xl md:text-4xl font-medium title-font text-blue-600">
+              Therapy Worksheets, Audio, Activities, and more..
+            </h1>
+          </div>
+          <div className="flex  flex-wrap justify-center items-center">
+            <div className="p-4 md:w-1/4">
+              <div className="flex rounded-lg h-full justify-center items-center flex-col bg-gray-200 p-8 text-blue-600">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="50"
+                  height="50"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path d="M21 5c0-1.103-.897-2-2-2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2V5zM5 19V5h14l.002 14H5z"></path>
+                  <path d="M7 7h1.998v2H7zm4 0h6v2h-6zm-4 4h1.998v2H7zm4 0h6v2h-6zm-4 4h1.998v2H7zm4 0h6v2h-6z"></path>
+                </svg>
+                <h3 className="text-lg font-bold">Worksheets</h3>
+              </div>
+            </div>
+            <div className="p-4 md:w-1/4">
+              <div className="flex rounded-lg h-full justify-center items-center flex-col bg-gray-200 p-8 text-blue-600">
+              <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="currentColor" ><path d="M19.221 10.803 12 10V4a2 2 0 0 0-4 0v12l-3.031-1.212a2 2 0 0 0-2.64 1.225l-.113.34a.998.998 0 0 0 .309 1.084l5.197 4.332c.179.149.406.231.64.231H19a2 2 0 0 0 2-2v-7.21a2 2 0 0 0-1.779-1.987z"></path></svg>
+                <h3 className="text-lg font-bold">Interactives</h3>
+              </div>
+            </div>
+            <div className="p-4 md:w-1/4">
+              <div className="flex rounded-lg h-full justify-center items-center flex-col bg-gray-200 p-8 text-blue-600">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="50"
+                  height="50"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path d="M4 8H2v12a2 2 0 0 0 2 2h12v-2H4z"></path><path d="M20 2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zm-9 12V6l7 4z"></path>
+                </svg>
+                <h3 className="text-lg font-bold">Videos</h3>
+              </div>
+            </div>
+            <div className="p-4 md:w-1/4">
+              <div className="flex rounded-lg h-full justify-center items-center flex-col bg-gray-200 p-8 text-blue-600">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="50"
+                  height="50"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                ><path d="M21 3h-7a2.98 2.98 0 0 0-2 .78A2.98 2.98 0 0 0 10 3H3a1 1 0 0 0-1 1v15a1 1 0 0 0 1 1h5.758c.526 0 1.042.214 1.414.586l1.121 1.121c.009.009.021.012.03.021.086.079.182.149.294.196h.002a.996.996 0 0 0 .762 0h.002c.112-.047.208-.117.294-.196.009-.009.021-.012.03-.021l1.121-1.121A2.015 2.015 0 0 1 15.242 20H21a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zM8.758 18H4V5h6c.552 0 1 .449 1 1v12.689A4.032 4.032 0 0 0 8.758 18zM20 18h-4.758c-.799 0-1.584.246-2.242.689V6c0-.551.448-1 1-1h6v13z"></path>
+                </svg>
+                <h3 className="text-lg font-bold">Articles</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="mainbox"
+        className="text-gray-400 body-font flex flex-col md:flex-row py-20"
+      >
         {/* <aside class="top-16  w-1/4 z-0 md:flex left-0  min-h-[65vh] transition-transform -translate-x-full sm:translate-x-0"> */}
         <div class="rounded-r-lg py-5 hidden px-3 w-1/4 sticky top-20 gap-3 h-full md:flex flex-col bg-white border-r border-gray-200">
           <div className="w-full h-full  ">
@@ -486,7 +480,7 @@ export default function Worksheet({ curruntPage }) {
                   <li>
                     <Link
                       href={`/worksheet?page=${curruntPage}#mainbox `}
-                     aria-current="page"
+                      aria-current="page"
                       className="cursor-pointer z-10 flex items-center justify-center px-3 h-8 leading-tight border hover:bg-blue-700 hover:text-blue-100 border-gray-700 bg-blue-600 text-white"
                     >
                       {curruntPage}
