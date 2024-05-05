@@ -595,7 +595,7 @@ export default function Index() {
               setCreateData({
                 title: "",
                 description: "",
-                category: "Demo 1",
+                category: "Stress",
                 image: "",
                 columns: [],
                 isOneTime:false

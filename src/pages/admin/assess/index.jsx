@@ -14,6 +14,7 @@ export default function Index() {
   // comman Data for CRUD
   const categoryOptions = [
     "Mental health",
+    "Self Care",
     "Disorder",
     "Child",
     "Personality",
