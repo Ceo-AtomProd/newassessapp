@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { TypeAnimation } from "react-type-animation";
 
 export default function Hero() {
   return (
@@ -13,9 +14,23 @@ export default function Hero() {
             />
           </div>
           <div class=" md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
-            <h1 class="title-font text-2xl md:text-4xl xl:text-5xl mb-4 text-gray-900 font-bold">
-              Now AI automate all your analysis of sessions / risk assess / patient
-              profile
+            <h1 class="title-font text-4xl md:text-5xl xl:text-6xl mb-4 text-gray-900 font-bold">
+              Now AI automate all your analysis of {" "} <br />
+              <TypeAnimation
+                sequence={[
+                  // Same substring at the start will only be typed out once, initially
+                  "sessions",
+                  1000, // wait 1s before replacing "Mice" with "Hamsters"
+                  "risk assess",
+                  1000,
+                  "patient profile",
+                  1000,
+                ]}
+                wrapper="span"
+                speed={50}
+                className="text-blue-600"
+                repeat={Infinity}
+              />
             </h1>
             <p class="mb-8 leading-relaxed font-semibold md:text-xl text-sm">
               Get detail report of session and build next session framework of
@@ -24,47 +39,56 @@ export default function Hero() {
               <span className="font-bold">Never store any data of user.</span>
             </p>
             <div class="flex justify-center">
-              <Link href="#Try" class="inline-flex text-white bg-blue-500 border-0 py-3 px-12 focus:outline-none hover:bg-blue-600 rounded text-lg">
+              <Link
+                href="#Try"
+                class="inline-flex text-white bg-blue-500 border-0 py-3 px-12 focus:outline-none hover:bg-blue-600 rounded-lg text-lg"
+              >
                 Try For Free
-              </Link >
+              </Link>
             </div>
           </div>
         </div>
       </section>
-      <section id="Try" class="text-gray-600 body-font py-20 bg-gray-100">
-        <div class="container mx-auto flex px-5 py-5 md:flex-row flex-col items-center">
-          <div class=" md:w-1/2 w-5/6 mb-10 md:mb-0 p-16 bg-gray-300 rounded-lg">
+      <section id="Try" class="text-gray-600 body-font py-20 flex justify-center items-center ">
+         <div className="bg-gray-100 w-full md:w-2/3 p-10 rounded-lg">
+        <div class="container mx-auto flex px-5 py-5 md:flex-row flex-col items-center ">
+      
+          <div class=" md:w-1/2 w-5/6 mb-10 md:mb-0 p-5 bg-gray-300 rounded-lg">
+          <Link href={"/"}>
             <img
               class="object-cover object-center rounded"
               alt="itemn"
-              src="/worksheet.png"
+              src="/home-1.png"
             />
+             </Link>
           </div>
           <div class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
             <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
-                <span className="text-blue-500">Build blue print {" "}</span>
-               of session in just seconds
+              <span className="text-blue-500">Build blue print </span>
+              of session in just seconds
             </h1>
             <p class="mb-8 leading-relaxed">
               Get therapy session framework of techniques to use, goals to
               assign, and risk assessment by analyzing the previous session
               progress and talk
             </p>
+            
           </div>
+         
         </div>
 
         <div class="container mx-auto flex px-5 py-5 md:flex-row flex-col items-center">
-          <div class=" md:w-1/2 w-5/6 mb-10 md:mb-0 p-16 bg-gray-300 rounded-lg">
+          <div class=" md:w-1/2  w-5/6 mb-10 md:mb-0 p-5 bg-gray-300 rounded-lg">
             <img
               class="object-cover object-center rounded"
               alt="itemn"
-              src="/assess.png"
+              src="/home-3.png"
             />
           </div>
           <div class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
             <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
-            <span className="text-blue-500">100+ Diagnosis {" "}</span>
-               of Mental illness and disorders
+              <span className="text-blue-500">100+ Diagnosis </span>
+              of Mental illness and disorders
             </h1>
             <p class="mb-8 leading-relaxed">
               Share inbuild or customize the assessment for patient and analyze
@@ -74,22 +98,25 @@ export default function Hero() {
           </div>
         </div>
         <div class="container mx-auto flex px-5 py-5 md:flex-row flex-col items-center">
-          <div class=" md:w-1/2 w-5/6 mb-10 md:mb-0 p-16 bg-gray-300 rounded-lg">
+          <div class=" md:w-1/2  w-5/6 mb-10 md:mb-0 p-5 bg-gray-300 rounded-lg">
             <img
               class="object-cover object-center rounded"
               alt="itemn"
-              src="/worksheet.png"
+              src="/home-2.png"
             />
           </div>
           <div class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
             <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
-            <span className="text-blue-500">Assign Goal {" "}</span>
-               to patient and measure live progress
+              <span className="text-blue-500">Assign Goal </span>
+              to patient and measure live progress
             </h1>
             <p class="mb-8 leading-relaxed">
-            Get access to bunch of therapy guide, worksheet that help to learn, practice share with patient on platfrom with easy to fill UI.
+              Get access to bunch of therapy guide, worksheet that help to
+              learn, practice share with patient on platfrom with easy to fill
+              UI.
             </p>
           </div>
+        </div>
         </div>
       </section>
 

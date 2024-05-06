@@ -12,6 +12,15 @@ export default function Index() {
   const [viewModal, setViewModal] = useState(false);
   const [deleteModal, setDeleteModal] = useState(false);
 
+  function truncateString(str, maxLength) {
+    if (str.length <= maxLength) {
+      return str;
+    } else {
+      return str.substring(0, maxLength) + "...";
+    }
+  }
+  
+
   // comman Data for CRUD
   const categoryOptions = [
     "Addiction",
@@ -1667,7 +1676,7 @@ export default function Index() {
                         {i.title}
                       </td>
                       <td className="px-4 py-3 text-gray-700">
-                        {i.description}
+                        {truncateString(i.description, 100)}
                       </td>
                       <td
                         scope="row"
@@ -1675,6 +1684,7 @@ export default function Index() {
                       >
                         {i.category}
                       </td>
+                      
                       <td className="px-4 py-3 flex items-center justify-center gap-3">
                         <button
                           className="text-green-700"

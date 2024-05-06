@@ -57,9 +57,9 @@ export default function Worksheet({ curruntPage }) {
   return (
     <>
       <section className="bg-gray-100 md:px-20">
-        <div className="container mx-auto flex px-5 lg:px-32 py-5 md:flex-row flex-col items-center">
-          <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
-            <h1 className="title-font font-bold md:text-5xl text-4xl mb-4 text-blue-600">
+        <div className="container mx-auto flex px-5 lg:px-20 py-5 md:flex-row flex-col items-center">
+          <div className="lg:flex-grow md:w-2/3 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+            <h1 className="title-font font-bold md:text-6xl text-4xl mb-4 text-blue-600">
               Therapy tools for
               <br />
               <span>Mental Health Professionals</span>
@@ -111,7 +111,7 @@ export default function Worksheet({ curruntPage }) {
               </form>
             </div>
           </div>
-          <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
+          <div className=" md:w-1/3 w-5/6">
             <img
               className="object-cover object-center rounded"
               alt="hero"
@@ -122,7 +122,7 @@ export default function Worksheet({ curruntPage }) {
       </section>
 
       <section className="text-gray-600 body-font bg-gray-100">
-        <div className="container md:px-20 px-5 py-10 mx-auto flex flex-col justify-center items-center">
+        <div className="container md:px-20 px-5  mx-auto flex flex-col justify-center items-center">
           <div className="flex flex-col md:w-1/2 text-center  mb-5">
             <h1 className="text-3xl md:text-4xl font-medium title-font text-blue-600">
               Therapy Worksheets, Audio, Activities, and more..
