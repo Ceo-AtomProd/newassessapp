@@ -3,8 +3,8 @@ import Link from "next/link";
 
 export default function ListComp({ Name, imageLink, Category, Id, type }) {
   return (
-    <div className="w-full max-w-sm h-fit rounded-lg shadow bg-gray-50 border border-blue-400">
-      <Link href={`/course/${Id}`}>
+    <div className="w-full max-w-sm h-fit rounded-lg shadow bg-gray-50 border-2 border-blue-600">
+      <Link href={`/assess/${Id}`}>
         <div className="h-60 w-full p-3 ">
           <Image
             width={500}
@@ -23,20 +23,15 @@ export default function ListComp({ Name, imageLink, Category, Id, type }) {
           </h5>
         </a>
         <div className="flex items-center mt-2.5 mb-5 gap-2">
-          <span className="text-xs font-semibold px-2.5 py-0.5 rounded bg-gray-200 text-black ">
+          <span className="text-xs font-semibold px-2.5 py-0.5 rounded bg-blue-600 text-white ">
             {Category}
           </span>
-          <span className="text-xs font-semibold px-2.5 py-0.5 rounded bg-gray-200 text-black ">
+          <span className="text-xs font-semibold px-2.5 py-0.5 rounded bg-blue-600 text-white ">
             {type}
           </span>
         </div>
         <div className="flex items-center justify-between">
-          <Link
-            href={`/assess/${Id}`}
-            className="text-white font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-blue-600 hover:bg-blue-700 "
-          >
-            View {type}
-          </Link>
+
         </div>
       </div>
     </div>

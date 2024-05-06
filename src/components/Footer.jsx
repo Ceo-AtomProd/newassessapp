@@ -19,11 +19,6 @@ export default function Footer() {
           </Link>
           <ul className="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0">
             <li>
-              <Link href="/#About" className="hover:underline me-4 md:me-6">
-                About
-              </Link>
-            </li>
-            <li>
               <Link href="/assess" className="hover:underline me-4 md:me-6">
                 Assessments
               </Link>
@@ -46,7 +41,7 @@ export default function Footer() {
           <a href="/" className="hover:underline">
             {process.env.NEXT_PUBLIC_SITENAME}
           </a>
-          . All Rights Reserved, {""}
+          . All Rights Reserved. {""} <br />
           Developed by{" "}
           <a href="https://www.atomprod.in" className="hover:underline">
             Atomprod.

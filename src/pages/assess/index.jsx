@@ -44,7 +44,9 @@ export default function Asess({ curruntPage }) {
         method: "get",
         url: `/api/public/assess?page=${curruntPage}&search=${search}&filter=${filter}&type=all`,
       }).then(function ({ data }) {
-        setData(data.allAssess);
+        setTimeout(() => {
+          setData(data.allAssess);
+        }, 800);
         setTotalPage(data.totalPages);
       });
     } catch (error) {
@@ -84,19 +86,19 @@ export default function Asess({ curruntPage }) {
     return array.map((i) => (
       <div
         key={i}
-        className="w-full max-w-sm h-fit rounded-lg shadow bg-blue-600 border border-gray-800 animate-pulse"
+        className="w-full max-w-sm h-fit rounded-lg shadow bg-white border-2 border-blue-600 animate-pulse"
       >
         <div className="h-56 w-full p-3 mb-6">
-          <div className="rounded-lg h-full bg-gray-50"></div>
+          <div className="rounded-lg h-full bg-gray-500"></div>
         </div>
         <div className="px-3 pb-5">
-          <div className=" h-6 rounded-lg w-40 bg-gray-50"></div>
-          <div className="flex items-center mt-2.5 mb-5">
-            <span className=" h-4 w-20 px-2.5 py-0.5 rounded bg-blue-200 "></span>
+          <div className=" h-6 rounded-lg w-40 bg-gray-500"></div>
+          <div className="flex items-center mt-2.5 mb-5 gap-2">
+            <span className=" h-4 w-20 px-2.5 py-0.5 rounded bg-blue-600 "></span>
+            <span className=" h-4 w-20 px-2.5 py-0.5 rounded bg-blue-600 "></span>
           </div>
           <div className="flex items-center  justify-between">
-            <span className="text-3xl font-bol rounded-lg bg-white h-10 w-32"></span>
-            <div className="rounded-lg px-5 py-2.5  bg-white hover:bg-gray-100 h-10 w-28"></div>
+           
           </div>
         </div>
       </div>

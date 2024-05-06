@@ -58,8 +58,8 @@ export default function Worksheet({ curruntPage }) {
     <>
       <section className="bg-gray-100 md:px-20">
         <div className="container mx-auto flex px-5 lg:px-20 py-5 md:flex-row flex-col items-center">
-          <div className="lg:flex-grow md:w-2/3 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
-            <h1 className="title-font font-bold md:text-6xl text-4xl mb-4 text-blue-600">
+          <div className="lg:flex-grow md:w-3/4 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+            <h1 className="title-font w-full font-bold md:text-6xl text-4xl mb-4 text-blue-600">
               Therapy tools for
               <br />
               <span>Mental Health Professionals</span>
@@ -67,7 +67,7 @@ export default function Worksheet({ curruntPage }) {
             <p className="mb-8 leading-relaxed text-blue-600 text-lg font-semibold">
               For Therapist, By Therapists
             </p>
-            <div className="flex w-1/2 justify-center">
+            <div className="flex w-5/6 md:w-1/2 justify-center">
               <form class="flex items-center w-full mx-auto">
                 <label for="simple-search" class="sr-only">
                   Search
@@ -84,9 +84,9 @@ export default function Worksheet({ curruntPage }) {
                   />
                 </div>
                 <Link
-                  onClick={()=>{
-                    setData(null)
-                    loadData()
+                  onClick={() => {
+                    setData(null);
+                    loadData();
                   }}
                   href="#mainbox"
                   class="p-2.5 ms-2 text-sm font-medium text-white bg-blue-700 rounded-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
@@ -111,9 +111,9 @@ export default function Worksheet({ curruntPage }) {
               </form>
             </div>
           </div>
-          <div className=" md:w-1/3 w-5/6">
+          <div className=" md:w-1/4 w-5/6">
             <img
-              className="object-cover object-center rounded"
+              className="object-cover w-full object-center rounded"
               alt="hero"
               src="/work-page.png"
             />
@@ -146,7 +146,15 @@ export default function Worksheet({ curruntPage }) {
             </div>
             <div className="p-4 md:w-1/4">
               <div className="flex rounded-lg h-full justify-center items-center flex-col bg-gray-200 p-8 text-blue-600">
-              <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="currentColor" ><path d="M19.221 10.803 12 10V4a2 2 0 0 0-4 0v12l-3.031-1.212a2 2 0 0 0-2.64 1.225l-.113.34a.998.998 0 0 0 .309 1.084l5.197 4.332c.179.149.406.231.64.231H19a2 2 0 0 0 2-2v-7.21a2 2 0 0 0-1.779-1.987z"></path></svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="50"
+                  height="50"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path d="M19.221 10.803 12 10V4a2 2 0 0 0-4 0v12l-3.031-1.212a2 2 0 0 0-2.64 1.225l-.113.34a.998.998 0 0 0 .309 1.084l5.197 4.332c.179.149.406.231.64.231H19a2 2 0 0 0 2-2v-7.21a2 2 0 0 0-1.779-1.987z"></path>
+                </svg>
                 <h3 className="text-lg font-bold">Interactives</h3>
               </div>
             </div>
@@ -159,7 +167,8 @@ export default function Worksheet({ curruntPage }) {
                   viewBox="0 0 24 24"
                   fill="currentColor"
                 >
-                  <path d="M4 8H2v12a2 2 0 0 0 2 2h12v-2H4z"></path><path d="M20 2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zm-9 12V6l7 4z"></path>
+                  <path d="M4 8H2v12a2 2 0 0 0 2 2h12v-2H4z"></path>
+                  <path d="M20 2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zm-9 12V6l7 4z"></path>
                 </svg>
                 <h3 className="text-lg font-bold">Videos</h3>
               </div>
@@ -172,7 +181,8 @@ export default function Worksheet({ curruntPage }) {
                   height="50"
                   viewBox="0 0 24 24"
                   fill="currentColor"
-                ><path d="M21 3h-7a2.98 2.98 0 0 0-2 .78A2.98 2.98 0 0 0 10 3H3a1 1 0 0 0-1 1v15a1 1 0 0 0 1 1h5.758c.526 0 1.042.214 1.414.586l1.121 1.121c.009.009.021.012.03.021.086.079.182.149.294.196h.002a.996.996 0 0 0 .762 0h.002c.112-.047.208-.117.294-.196.009-.009.021-.012.03-.021l1.121-1.121A2.015 2.015 0 0 1 15.242 20H21a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zM8.758 18H4V5h6c.552 0 1 .449 1 1v12.689A4.032 4.032 0 0 0 8.758 18zM20 18h-4.758c-.799 0-1.584.246-2.242.689V6c0-.551.448-1 1-1h6v13z"></path>
+                >
+                  <path d="M21 3h-7a2.98 2.98 0 0 0-2 .78A2.98 2.98 0 0 0 10 3H3a1 1 0 0 0-1 1v15a1 1 0 0 0 1 1h5.758c.526 0 1.042.214 1.414.586l1.121 1.121c.009.009.021.012.03.021.086.079.182.149.294.196h.002a.996.996 0 0 0 .762 0h.002c.112-.047.208-.117.294-.196.009-.009.021-.012.03-.021l1.121-1.121A2.015 2.015 0 0 1 15.242 20H21a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zM8.758 18H4V5h6c.552 0 1 .449 1 1v12.689A4.032 4.032 0 0 0 8.758 18zM20 18h-4.758c-.799 0-1.584.246-2.242.689V6c0-.551.448-1 1-1h6v13z"></path>
                 </svg>
                 <h3 className="text-lg font-bold">Articles</h3>
               </div>
@@ -380,25 +390,21 @@ export default function Worksheet({ curruntPage }) {
 
             {data?.map((i) => (
               <div className="xl:w-1/4 w-full md:w-1/2 p-4" key={i._id}>
-                <div className="bg-gray-50 p-6 rounded-lg border border-gray-400">
-                  <img
-                    className="h-40 rounded border border-gray-500 w-full object-cover object-center mb-6"
-                    src={`${process.env.NEXT_PUBLIC_IMAGE_URL}${i.image}`}
-                    alt="content"
-                  />
-                  <h3 className="tracking-widest text-blue-500 text-xs font-medium title-font">
-                    {i.category}
-                  </h3>
-                  <h2 className="text-lg text-gray-900 font-medium title-font mb-4">
-                    {i.title}
-                  </h2>
-                  <Link
-                    href={`/worksheet/${i._id}`}
-                    className="text-blue-100 font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-blue-600 hover:bg-blue-700 "
-                  >
-                    View Worksheet
-                  </Link>
-                </div>
+                <Link href={`/worksheet/${i._id}`}>
+                  <div className="bg-gray-50 p-6 rounded-lg border border-gray-400 h-80">
+                    <img
+                      className="h-40 rounded border border-gray-500 w-full object-cover object-center mb-6"
+                      src={`${process.env.NEXT_PUBLIC_IMAGE_URL}${i.image}`}
+                      alt="content"
+                    />
+                    <h3 className="tracking-widest text-blue-500 text-xs font-medium title-font">
+                      {i.category}
+                    </h3>
+                    <h2 className="text-lg text-gray-900 font-medium title-font mb-4">
+                      {i.title}
+                    </h2>
+                  </div>
+                </Link>
               </div>
             ))}
             {!data &&
@@ -408,7 +414,6 @@ export default function Worksheet({ curruntPage }) {
                     <div className="h-40 w-full bg-gray-500 animate-pulse"></div>
                     <h3 className="tracking-widest h-4 w-1/3 mt-2 rounded-lg bg-blue-500  text-xs font-medium title-font animate-pulse"></h3>
                     <h2 className="text-lg h-8 w-full mt-2 rounded-lg bg-gray-500 font-medium title-font mb-4 animate-pulse"></h2>
-                    <div className="text-blue-100 h-8 w-1/2 font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-blue-600 hover:bg-blue-700 animate-pulse"></div>
                   </div>
                 </div>
               ))}

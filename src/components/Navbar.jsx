@@ -29,7 +29,6 @@ export default function Navbar() {
     { title: "Home", link: "/" },
     { title: "Assessments", link: "/assess" },
     { title: "Worksheets", link: "/worksheet" },
-    { title: "About", link: "/#About" },
     { title: "Contact", link: "/contact" },
   ];
 

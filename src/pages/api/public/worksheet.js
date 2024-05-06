@@ -9,7 +9,7 @@ export default async function handler(req, res) {
     if (type === "all") {
       const { page, filter, search } = await req.query;
       let conditions = {};
-      const pageSize = 8;
+      const pageSize = 16;
       const pageNumber = parseInt(page) || 1;
       const skip = (pageNumber - 1) * pageSize;
       if (filter) {
