@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { TypeAnimation } from "react-type-animation";
 
@@ -7,7 +8,10 @@ export default function Hero() {
       <section class="text-gray-600 body-font">
         <div class="container mx-auto flex px-5 lg:px-20 py-14  md:flex-row flex-col items-center justify-between">
           <div class=" md:w-1/2 w-full  md:order-2 mb-5 md:mb-0">
-            <img
+            <Image
+            width={1000}
+            height={1000}
+            priority
               class="object-cover object-center rounded-lg"
               alt="hero"
               src="/hero-main.jpg"
@@ -55,7 +59,10 @@ export default function Hero() {
       
           <div class=" md:w-1/2 w-5/6 mb-10 md:mb-0 p-5 bg-gray-300 rounded-lg">
           <Link href={"/"}>
-            <img
+            <Image
+            width={500}
+            height={500}
+            priority
               class="object-cover object-center rounded"
               alt="itemn"
               src="/home-1.png"
@@ -79,11 +86,16 @@ export default function Hero() {
 
         <div class="container mx-auto flex px-5 py-5 md:flex-row flex-col items-center">
           <div class=" md:w-1/2  w-5/6 mb-10 md:mb-0 p-5 bg-gray-300 rounded-lg">
-            <img
+          <Link href={"/assess"}>
+            <Image
+            width={500}
+            height={500}
+            priority
               class="object-cover object-center rounded"
               alt="itemn"
               src="/home-3.png"
             />
+            </Link>
           </div>
           <div class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
             <h1 class="title-font md:text-4xl font-semibold text-3xl mb-4  text-gray-900">
@@ -99,11 +111,16 @@ export default function Hero() {
         </div>
         <div class="container mx-auto flex px-5 py-5 md:flex-row flex-col items-center">
           <div class=" md:w-1/2  w-5/6 mb-10 md:mb-0 p-5 bg-gray-300 rounded-lg">
-            <img
+          <Link href={"/worksheet"}>
+            <Image
+            width={500}
+            height={500}
+            priority
               class="object-cover object-center rounded"
               alt="itemn"
               src="/home-2.png"
             />
+            </Link>
           </div>
           <div class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
             <h1 class="title-font md:text-4xl font-semibold text-3xl mb-4  text-gray-900">

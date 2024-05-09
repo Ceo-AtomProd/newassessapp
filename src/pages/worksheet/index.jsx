@@ -1,6 +1,7 @@
 import Link from "next/link";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import Image from "next/image";
 export default function Worksheet({ curruntPage }) {
   const [search, setSearch] = useState("");
   const [totalPage, setTotalPage] = useState(null);
@@ -122,7 +123,7 @@ export default function Worksheet({ curruntPage }) {
       </section>
 
       <section className="text-gray-600 body-font bg-gray-100">
-        <div className="container md:px-20 px-5  mx-auto flex flex-col justify-center items-center">
+        <div className="container md:px-20 px-5 pb-10 mx-auto flex flex-col justify-center items-center">
           <div className="flex flex-col md:w-1/2 text-center  mb-5">
             <h1 className="text-3xl md:text-4xl font-medium title-font text-blue-600">
               Therapy Worksheets, Audio, Activities, and more..
@@ -390,30 +391,37 @@ export default function Worksheet({ curruntPage }) {
 
             {data?.map((i) => (
               <div className="xl:w-1/4 w-full md:w-1/2 p-4" key={i._id}>
-                <Link href={`/worksheet/${i._id}`}>
-                  <div className="bg-gray-50 p-6 rounded-lg border border-gray-400 h-80">
-                    <img
-                      className="h-40 rounded border border-gray-500 w-full object-cover object-center mb-6"
-                      src={`${process.env.NEXT_PUBLIC_IMAGE_URL}${i.image}`}
-                      alt="content"
-                    />
-                    <h3 className="tracking-widest text-blue-500 text-xs font-medium title-font">
-                      {i.category}
-                    </h3>
-                    <h2 className="text-lg text-gray-900 font-medium title-font mb-4">
-                      {i.title}
-                    </h2>
-                  </div>
+                 <Link
+                    href={`/worksheet/${i._id}`}
+                  >
+                <div className="bg-gray-50 p-6 h-96 rounded-lg border border-gray-400">
+                  <Image
+                    className="h-56 rounded border border-gray-500 w-full mb-6"
+                    width={500}
+                    height={500}
+                    src={`${process.env.NEXT_PUBLIC_IMAGE_URL}${i.image}`}
+                    alt="content"
+                  />
+                  
+                  <h2 className="text-lg text-gray-900 font-medium title-font mb-4">
+                    {i.title}
+                  </h2>
+                 
+                  <h3 className="tracking-widest bg-blue-600 text-gray-50 px-3 py-1 rounded-lg h-fit w-fit text-xs font-medium title-font">
+                    {i.category}
+                  </h3>
+                </div>
                 </Link>
               </div>
             ))}
             {!data &&
               arr.map((i) => (
                 <div className="xl:w-1/4 w-full md:w-1/2 p-4" key={i}>
-                  <div className="bg-gray-50 p-6 rounded-lg border border-gray-400">
-                    <div className="h-40 w-full bg-gray-500 animate-pulse"></div>
-                    <h3 className="tracking-widest h-4 w-1/3 mt-2 rounded-lg bg-blue-500  text-xs font-medium title-font animate-pulse"></h3>
+                  <div className="bg-gray-50 p-6 h-96 rounded-lg border border-gray-400">
+                    <div className="h-56 w-full bg-gray-500 animate-pulse"></div>
+                    
                     <h2 className="text-lg h-8 w-full mt-2 rounded-lg bg-gray-500 font-medium title-font mb-4 animate-pulse"></h2>
+                    <h3 className="tracking-widest h-4 w-1/3 mt-2 rounded-lg bg-blue-500  text-xs font-medium title-font animate-pulse"></h3>
                   </div>
                 </div>
               ))}

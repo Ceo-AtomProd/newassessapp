@@ -29,6 +29,7 @@ export default function Navbar() {
     { title: "Home", link: "/" },
     { title: "Assessments", link: "/assess" },
     { title: "Worksheets", link: "/worksheet" },
+    { title: "Blogs", link: "/blogs" },
     { title: "Contact", link: "/contact" },
   ];
 
@@ -95,7 +96,7 @@ export default function Navbar() {
               className="mr-3 h-6 sm:h-9"
               alt="Flowbite Logo"
             /> */}
-            <span className="self-center text-xl font-bold whitespace-nowrap text-blue-600">
+            <span className="self-center text-2xl font-bold whitespace-nowrap text-blue-600">
              {process.env.NEXT_PUBLIC_SITENAME}
             </span>
           </Link>
@@ -219,8 +220,8 @@ export default function Navbar() {
                     onClick={()=>setMenuOpen(false)}
                     className={`${
                       router.pathname === i.link
-                        ? "block py-2 pr-4 pl-3 text-gray-100 rounded bg-blue-700 md:bg-transparent md:text-blue-700 md:p-0 "
-                        : "block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 "
+                        ? "block py-2 pr-4 pl-3 text-lg text-gray-100 rounded bg-blue-600 md:bg-transparent md:text-blue-600 md:p-0 "
+                        : "block py-2 pr-4 pl-3 text-lg text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 "
                     }`}
                     aria-current="page"
                   >

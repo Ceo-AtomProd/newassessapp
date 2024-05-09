@@ -26,6 +26,7 @@ export default async function handler(req, res) {
       }
       if(req.method == "GET"){
         const { page, filter, search } = await req.query;
+        console.log( page, filter, search);
         let conditions = {};
         const pageSize = 10;
         const pageNumber = parseInt(page) || 1;
@@ -44,6 +45,7 @@ export default async function handler(req, res) {
           .limit(pageSize)
           .sort({ _id: Number(filter)})
           .exec()
+          console.log(assess);
         const totalAssess = await AssessResponse.countDocuments(conditions);
         return res.status(200).json({
           success: true,
