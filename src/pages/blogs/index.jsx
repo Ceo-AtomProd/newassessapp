@@ -1,8 +1,13 @@
+import blogsData from "@/libs/blogData";
+import Link from "next/link";
+import Image from "next/image";
 export default function Blogs() {
+
+  
   return (
     <section class="text-gray-600 body-font">
-      <div class="container px-5 py-24 mx-auto">
-        <div class="flex flex-col text-center w-full mb-20">
+      <div class="container px-5 md:px-20 py-10 mx-auto">
+        <div class="flex flex-col text-center w-full mb-5">
           <h2 class="text-xs text-blue-600 tracking-widest font-medium title-font mb-1">
             blogs
           </h2>
@@ -10,43 +15,30 @@ export default function Blogs() {
             Our Blogs
           </h1>
         </div>
-        <div class="flex flex-wrap -m-4">
+        <div class="flex w-full flex-wrap md:-m-4 ">
 
-          <div class="p-4 md:w-1/3">
-            <div class="h-full border-2 bg-gray-50 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
-              <img
-                class="lg:h-48 md:h-36 w-full object-cover object-center"
-                src="https://dummyimage.com/720x400"
+          {blogsData.map(i=><div className="w-full md:w-1/3 h-60 md:h-80 p-4 " key={i.slug}><Link href={`/blogs/${i.slug}`}  class="relative w-full">
+            
+            
+              <Image
+              width={500}
+              height={500}
+                class="w-full  rounded-lg object-cover object-center absolute "
+                src={i.img}
                 alt="blog"
               />
-              <div class="p-6">
-                <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
-                  CATEGORY
+              <div class="h-full relative bg-black bg-opacity-30 z-10 rounded-lg  ">
+              <div class="p-4 flex flex-col justify-between items-start h-full">
+                <h2 class="tracking-widest text-xs title-font font-medium bg-blue-600 rounded-md px-2 py-1 w-fit text-gray-200 mb-1">
+                  {i.category}
                 </h2>
-                <h1 class="title-font text-lg font-medium text-gray-900 mb-3">
-                  The Catalyzer
+
+                <div className="items-start ">
+                <h1 class="title-font text-2xl  font-semibold text-gray-100 mb-3">
+                  {i.title}
                 </h1>
-                <p class="leading-relaxed mb-3">
-                  Photo booth fam kinfolk cold-pressed sriracha leggings
-                  jianbing microdosing tousled waistcoat.
-                </p>
-                <div class="flex items-center flex-wrap ">
-                  <a class="text-blue-600 inline-flex items-center md:mb-2 lg:mb-0">
-                    Learn More
-                    <svg
-                      class="w-4 h-4 ml-2"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      fill="none"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <path d="M5 12h14"></path>
-                      <path d="M12 5l7 7-7 7"></path>
-                    </svg>
-                  </a>
-                  <span class="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
+                <div class="flex items-center flex-wrap w-fit">
+                  <span class="text-gray-200 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
                     <svg
                       class="w-4 h-4 mr-1"
                       stroke="currentColor"
@@ -56,12 +48,11 @@ export default function Blogs() {
                       stroke-linejoin="round"
                       viewBox="0 0 24 24"
                     >
-                      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                      <circle cx="12" cy="12" r="3"></circle>
+                     <path d="M12 2a5 5 0 1 0 5 5 5 5 0 0 0-5-5zm0 8a3 3 0 1 1 3-3 3 3 0 0 1-3 3zm9 11v-1a7 7 0 0 0-7-7h-4a7 7 0 0 0-7 7v1h2v-1a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v1z"></path>
                     </svg>
-                    1.2K
+                    {i.author}
                   </span>
-                  <span class="text-gray-400 inline-flex items-center leading-none text-sm">
+                  <span class="text-gray-200 inline-flex items-center leading-none text-sm">
                     <svg
                       class="w-4 h-4 mr-1"
                       stroke="currentColor"
@@ -71,14 +62,15 @@ export default function Blogs() {
                       stroke-linejoin="round"
                       viewBox="0 0 24 24"
                     >
-                      <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path>
+                     <path d="M7 11h2v2H7zm0 4h2v2H7zm4-4h2v2h-2zm0 4h2v2h-2zm4-4h2v2h-2zm0 4h2v2h-2z"></path><path d="M5 22h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2h-2V2h-2v2H9V2H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2zM19 8l.001 12H5V8h14z"></path>
                     </svg>
-                    6
+                    {i.date}
                   </span>
+                </div>
                 </div>
               </div>
             </div>
-          </div>
+          </Link></div>)}
 
         </div>
       </div>

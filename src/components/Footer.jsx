@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 export default function Footer() {
   return (
     <footer className="bg-white rounded-lg shadow m-4 z-10">
@@ -8,16 +9,20 @@ export default function Footer() {
             href="/"
             className="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse"
           >
-            {/* <img
-              src="https://flowbite.com/docs/images/logo.svg"
-              className="h-8"
+            <Image
+              width={100}
+              height={100}
+              src="/logo.png"
+              className="mr-3 h-full w-fit"
               alt="Flowbite Logo"
-            /> */}
-            <span className="self-center text-2xl font-bold text-blue-600 whitespace-nowrap">
-              {process.env.NEXT_PUBLIC_SITENAME}
-            </span>
+            />
           </Link>
           <ul className="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0">
+          <li>
+              <Link href="/blogs" className="hover:underline me-4 md:me-6">
+                Blogs
+              </Link>
+            </li>
             <li>
               <Link href="/assess" className="hover:underline me-4 md:me-6">
                 Assessments

@@ -45,7 +45,6 @@ export default async function handler(req, res) {
           .limit(pageSize)
           .sort({ _id: Number(filter)})
           .exec()
-          console.log(assess);
         const totalAssess = await AssessResponse.countDocuments(conditions);
         return res.status(200).json({
           success: true,
@@ -56,13 +55,12 @@ export default async function handler(req, res) {
         });
       }
       if (req.method === "PUT") {
-        const {_id, name, dob} = await req.body
+        const {_id, name} = await req.body
         try {
-          if (_id && name && dob) {
+          if (_id && name ) {
             await AssessResponse.updateOne({_id},{
               $set:{
-                name,
-                dob
+                name
               }
             })
             return res.status(200).json({message: "User Details Update Successfully"})

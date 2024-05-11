@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import axios from "axios";
 import Image from "next/image";
+import { useRouter } from "next/router";
 export default function Index() {
   // Modals
   const [filterModal, setFilterModal] = useState(false);
@@ -64,7 +65,10 @@ export default function Index() {
       console.log(error);
     }
   };
+  const  router = useRouter()
   useEffect(() => {
+    router.push("/admin/assess#")
+    setAllAssess(null)
     fetchData();
   }, [page, filter, search]);
 
@@ -1053,7 +1057,7 @@ export default function Index() {
     return (
       <> {page !== 1 && <li><a
         onClick={()=>{setPage(page - 1)}}
-                    className="flex items-center justify-center h-full py-1.5 px-3 ml-0 text-gray-500 bg-white rounded-l-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700"
+                    className="flex items-center justify-center cursor-pointer h-full py-1.5 px-3 ml-0 text-gray-500 bg-white rounded-l-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700"
                   >
                     <span className="sr-only">Previous</span>
                     <svg
@@ -1075,7 +1079,7 @@ export default function Index() {
                {page !== 1 &&  <li>
                   <a
                     onClick={()=>{setPage(page - 1)}}
-                    className="flex items-center justify-center text-sm py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700"
+                    className="flex items-center cursor-pointer justify-center text-sm py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700"
                   >
                     {page - 1}
                   </a>
@@ -1083,7 +1087,7 @@ export default function Index() {
 
                 <li>
                   <a
-                    className="flex items-center justify-center text-sm z-10 py-2 px-3 leading-tight text-blue-600 bg-blue-50 border border-blue-300 hover:bg-blue-100 hover:text-blue-700"
+                    className="flex items-center cursor-pointer justify-center text-sm z-10 py-2 px-3 leading-tight text-blue-600 bg-blue-50 border border-blue-300 hover:bg-blue-100 hover:text-blue-700"
                   >
                     {page}
                   </a>
@@ -1092,7 +1096,7 @@ export default function Index() {
                 {page !== totalPage && <li>
                   <a
                     onClick={()=>setPage(page + 1)}
-                    className="flex items-center justify-center text-sm py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700"
+                    className="flex items-center cursor-pointer justify-center text-sm py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700"
                   >
                     {page + 1}
                   </a>
@@ -1102,7 +1106,7 @@ export default function Index() {
                 {page !== totalPage && <li>
                   <a
                      onClick={()=>setPage(page + 1)}
-                    className="flex items-center justify-center h-full py-1.5 px-3 leading-tight text-gray-500 bg-white rounded-r-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700"
+                    className="flex items-center cursor-pointer justify-center h-full py-1.5 px-3 leading-tight text-gray-500 bg-white rounded-r-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700"
                   >
                     <span className="sr-only">Next</span>
                     <svg
@@ -1827,7 +1831,7 @@ export default function Index() {
               {page === 1 && (
                   <li>
                     <a
-                      className={`flex items-center justify-center h-full py-1.5 px-3 ml-0 text-gray-500 bg-white rounded-l-lg border border-blue-300 hover:bg-gray-100 hover:text-gray-700 ${
+                      className={`flex items-center justify-center cursor-pointer h-full py-1.5 px-3 ml-0 text-gray-500 bg-white rounded-l-lg border border-blue-300 hover:bg-gray-100 hover:text-gray-700 ${
                         page === 1
                           ? "pointer-events-none opacity-50 cursor-not-allowed"
                           : ""
@@ -1855,7 +1859,7 @@ export default function Index() {
                 {page === totalPage && (
                   <li>
                     <a
-                      className={`flex items-center justify-center h-full py-1.5 px-3 leading-tight text-gray-500 bg-white rounded-r-lg border border-blue-300 hover:bg-gray-100 hover:text-gray-700 ${
+                      className={`flex items-center justify-center h-full py-1.5 px-3 leading-tight text-gray-500 bg-white rounded-r-lg border border-blue-300 cursor-pointer hover:bg-gray-100 hover:text-gray-700 ${
                         page === totalPage
                           ? "pointer-events-none opacity-50 cursor-not-allowed"
                           : ""

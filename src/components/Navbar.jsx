@@ -91,14 +91,13 @@ export default function Navbar() {
       <nav className="bg-white  border-b border-gray-200 px-4 lg:px-6 py-2.5 ">
         <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
           <Link href="/" className="flex items-center">
-            {/* <img
-              src="https://flowbite.com/docs/images/logo.svg"
-              className="mr-3 h-6 sm:h-9"
+            <Image
+              width={100}
+              height={100}
+              src="/logo.png"
+              className="mr-3 h-full w-fit"
               alt="Flowbite Logo"
-            /> */}
-            <span className="self-center text-2xl font-bold whitespace-nowrap text-blue-600">
-             {process.env.NEXT_PUBLIC_SITENAME}
-            </span>
+            />
           </Link>
           
           <div className="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import axios from "axios";
 import Link from "next/link";
+import { useRouter } from "next/router";
 export default function Index() {
   const [filterModal, setFilterModal] = useState(false);
   const [updateModal, setUpdateModal] = useState(false);
@@ -36,7 +37,12 @@ export default function Index() {
       console.log(error);
     }
   };
+
+  const router = useRouter()
+
   useEffect(() => {
+    router.push('/user/assess#')
+    setAllAssess(null)
     fetchData();
   }, [page, filter, search]);
 
@@ -63,7 +69,6 @@ export default function Index() {
             data: {
               _id:linkData._id,
               name:linkData.name,
-              dob:linkData.dob,
             },
           })
             .then(function ({ data }) {
@@ -132,7 +137,7 @@ export default function Index() {
               </div>
               {/* <!-- Modal body --> */}
               <form onSubmit={handleUpdate}>
-                <div class="grid gap-4 mb-4 sm:grid-cols-2">
+                <div class="mb-2">
                   <div>
                     <label
                       for="name"
@@ -156,29 +161,7 @@ export default function Index() {
                       required
                     />
                   </div>
-                  <div>
-                    <label
-                      for="bob"
-                      class="block mb-2 text-sm font-medium text-gray-900 "
-                    >
-                      DOB Of Patient
-                    </label>
-                    <input
-                      type="date"
-                      name="bob"
-                      id="bob"
-                      value={linkData?.dob}
-                      onChange={(e) =>
-                        setLinkData((prevState) => ({
-                          ...prevState,
-                          dob: e.target.value,
-                        }))
-                      }
-                      class="bg-gray-50 border border-gray-300 text-gray-900 outline-blue-500 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 "
-                      placeholder="Type Name Of Patient"
-                      required
-                    />
-                  </div>
+                  
                 </div>
                  <button
                   type="submit"
@@ -196,7 +179,7 @@ export default function Index() {
     return (
       <> {page !== 1 && <li><a
         onClick={()=>{setPage(page - 1)}}
-                    className="flex items-center justify-center h-full py-1.5 px-3 ml-0 text-gray-500 bg-white rounded-l-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700"
+                    className="flex items-center cursor-pointer justify-center h-full py-1.5 px-3 ml-0 text-gray-500 bg-white rounded-l-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700"
                   >
                     <span className="sr-only">Previous</span>
                     <svg
@@ -218,7 +201,7 @@ export default function Index() {
                {page !== 1 &&  <li>
                   <a
                     onClick={()=>{setPage(page - 1)}}
-                    className="flex items-center justify-center text-sm py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700"
+                    className="flex items-center justify-center cursor-pointer text-sm py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700"
                   >
                     {page - 1}
                   </a>
@@ -226,7 +209,7 @@ export default function Index() {
 
                 <li>
                   <a
-                    className="flex items-center justify-center text-sm z-10 py-2 px-3 leading-tight text-blue-600 bg-blue-50 border border-blue-300 hover:bg-blue-100 hover:text-blue-700"
+                    className="flex items-center justify-center cursor-pointer text-sm z-10 py-2 px-3 leading-tight text-blue-600 bg-blue-50 border border-blue-300 hover:bg-blue-100 hover:text-blue-700"
                   >
                     {page}
                   </a>
@@ -235,7 +218,7 @@ export default function Index() {
                 {page !== totalPage && <li>
                   <a
                     onClick={()=>setPage(page + 1)}
-                    className="flex items-center justify-center text-sm py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700"
+                    className="flex items-center justify-center cursor-pointer text-sm py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700"
                   >
                     {page + 1}
                   </a>
@@ -245,7 +228,7 @@ export default function Index() {
                 {page !== totalPage && <li>
                   <a
                      onClick={()=>setPage(page + 1)}
-                    className="flex items-center justify-center h-full py-1.5 px-3 leading-tight text-gray-500 bg-white rounded-r-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700"
+                    className="flex items-center justify-center cursor-pointer h-full py-1.5 px-3 leading-tight text-gray-500 bg-white rounded-r-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700"
                   >
                     <span className="sr-only">Next</span>
                     <svg
@@ -308,7 +291,7 @@ export default function Index() {
         aria-hidden="true"
         className={`${
           !deleteModal && "hidden"
-        } flex   overflow-y-auto overflow-x-hidden fixed top-1/2 right-1/2 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full `}
+        } flex   overflow-y-auto overflow-x-hidden  fixed top-1/2 right-1/2 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full `}
       >
         <div className="relative p-4 w-full max-w-md max-h-full ">
           {/* <!-- Modal content --> */}
@@ -821,7 +804,7 @@ export default function Index() {
                       Name
                     </th>
                     <th scope="col" className="px-4 py-3 ">
-                      DOB
+                      Date
                     </th>
                     <th scope="col" className="px-4 py-3 ">
                      Assess Name
@@ -950,7 +933,7 @@ export default function Index() {
               {page === 1 && (
                   <li>
                     <a
-                      className={`flex items-center justify-center h-full py-1.5 px-3 ml-0 text-gray-500 bg-white rounded-l-lg border border-blue-300 hover:bg-gray-100 hover:text-gray-700 ${
+                      className={`flex items-center cursor-pointer justify-center h-full py-1.5 px-3 ml-0 text-gray-500 bg-white rounded-l-lg border border-blue-300 hover:bg-gray-100 hover:text-gray-700 ${
                         page === 1
                           ? "pointer-events-none opacity-50 cursor-not-allowed"
                           : ""
@@ -978,7 +961,7 @@ export default function Index() {
                 {page === totalPage && (
                   <li>
                     <a
-                      className={`flex items-center justify-center h-full py-1.5 px-3 leading-tight text-gray-500 bg-white rounded-r-lg border border-blue-300 hover:bg-gray-100 hover:text-gray-700 ${
+                      className={`flex items-center cursor-pointer justify-center h-full py-1.5 px-3 leading-tight text-gray-500 bg-white rounded-r-lg border border-blue-300 hover:bg-gray-100 hover:text-gray-700 ${
                         page === totalPage
                           ? "pointer-events-none opacity-50 cursor-not-allowed"
                           : ""

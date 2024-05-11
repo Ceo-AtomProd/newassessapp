@@ -199,9 +199,14 @@ export default function Worksheet({ _id }) {
   );
 
   function LinkModalComp() {
+    const getDate = () =>{
+      const day = new Date().getDate()
+      const month = new Date().getMonth() + 1
+      const year = new Date().getFullYear()
+      return `${day}-${month}-${year}`
+    }
     const [linkData, setLinkData] = useState({
       name: "",
-      dob: "",
       link: null,
     });
     const [isCopied, setIsCopied] = useState(false);
@@ -227,7 +232,7 @@ export default function Worksheet({ _id }) {
           data: {
             worksheetId:worksheet._id,
             name:linkData.name,
-            dob:linkData.dob,
+            dob: getDate(),
           },
         })
           .then(function ({ data }) {
@@ -272,7 +277,6 @@ export default function Worksheet({ _id }) {
                   setLinkModal(false);
                   setLinkData({
                     name: "",
-                    dob: "",
                     link: null,
                   });
                 }}
@@ -296,7 +300,7 @@ export default function Worksheet({ _id }) {
             </div>
             {/* <!-- Modal body --> */}
             <form onSubmit={handleGenrateLink}>
-              <div class="grid gap-4 mb-4 sm:grid-cols-2">
+              <div class="mb-2">
                 <div>
                   <label
                     for="name"
@@ -320,29 +324,7 @@ export default function Worksheet({ _id }) {
                     required
                   />
                 </div>
-                <div>
-                  <label
-                    for="bob"
-                    class="block mb-2 text-sm font-medium text-gray-900 "
-                  >
-                    DOB Of Patient
-                  </label>
-                  <input
-                    type="date"
-                    name="bob"
-                    id="bob"
-                    value={linkData.dob}
-                    onChange={(e) =>
-                      setLinkData((prevState) => ({
-                        ...prevState,
-                        dob: e.target.value,
-                      }))
-                    }
-                    class="bg-gray-50 border border-gray-300 text-gray-900 outline-blue-500 text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 "
-                    placeholder="Type Name Of Patient"
-                    required
-                  />
-                </div>
+                
               </div>
               <div>
                 {linkData.link !== null && (

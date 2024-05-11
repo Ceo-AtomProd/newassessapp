@@ -56,11 +56,10 @@ export default async function handler(req, res) {
       if (req.method === "PUT") {
         const {_id, name, dob , isComplete} = await req.body
         try {
-          if (_id && name && dob) {
+          if (_id && name) {
             await WorksheetResponse.updateOne({_id},{
               $set:{
                 name,
-                dob,
                 isComplete
               }
             })
