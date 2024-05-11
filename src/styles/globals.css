@@ -8,13 +8,16 @@
   }
 }
 body {
-  background: rgb(229, 231, 235)
+  background: rgb(225, 225, 225)
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+.font-bold-cust{
+  font-weight: bold;
 }
 
 #filterDropdown {
