@@ -21,7 +21,7 @@ export default function Hero() {
           </div>
           <div class=" md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
             <h1 class="title-font text-4xl lg:text-4xl xl:text-6xl mb-4 text-gray-900 font-bold">
-              Now AI automate all your analysis of <br />
+              Automate all your analysis of <br />
               <TypeAnimation
                 sequence={[
                   // Same substring at the start will only be typed out once, initially
@@ -56,44 +56,14 @@ export default function Hero() {
         </div>
       </section>
 
-      {/* garphic section  */}
-      <section class="text-gray-600 body-font">
-        <div class="container px-5 lg:px-20 py-5 flex flex-col justify-center items-center ">
-          <div class="flex flex-col text-center w-full mb-2">
-            <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">
-              Coming Soon...
-            </h1>
-          </div>
-          <div class="flex flex-wrap -m-4">
-            {grapicsData.map((i) => (
-              <div class="lg:w-1/4 md:w-1/2 w-full p-4">
-                <div class="bg-gray-50 p-6 lg:h-96 rounded-lg flex flex-col justify-between items-center" >
-                  <div className="flex flex-col justify-between items-center">
-                  <h2 class="text-lg xl:text-xl font-bold text-gray-900 title-font mb-4">
-                    {i.title}
-                  </h2>
-                  <p class="leading-relaxed text-base text-center" dangerouslySetInnerHTML={{__html:i.pera}}>
-                  </p>
-                  </div>
-                  <img
-                    class="rounded w-full  mb-6"
-                    src={`/graphic/${i.img}`}
-                    alt="content"
-                  />
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      
 
       {/* try s */}
       <section
         id="Try"
-        class="text-gray-600 body-font py-5 flex justify-center items-center "
-      >
-        <div className="bg-gray-100 w-full lg:w-4/5 xl:w-2/3 md:p-10 rounded-lg">
-          <div class="container  flex px-5 py-5 md:flex-row flex-col items-center ">
+        class="text-gray-600 w-full body-font py-5 flex justify-center items-center ">
+        <div className="bg-gray-100 w-full lg:w-5/6 md:p-10 rounded-lg">
+          <div class="container flex px-5 py-5 md:flex-row flex-col items-center ">
             <div class="w-full md:w-1/2 mb-10 md:mb-0 p-5 bg-gray-300 rounded-lg">
               <Link href={"/"} className="w-full h-full">
                 <Image
@@ -168,6 +138,37 @@ export default function Hero() {
                 UI.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* garphic section  */}
+      <section class="text-gray-600 body-font flex flex-col justify-center items-center ">
+        <div class="container px-5 lg:px-20 py-5 ">
+          <div class="flex flex-col text-center w-full mb-2">
+            <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">
+              Coming Soon...
+            </h1>
+          </div>
+          <div class="flex flex-wrap -m-4">
+            {grapicsData.map((i) => (
+              <div class="lg:w-1/4 md:w-1/2 w-full p-4">
+                <div class="bg-gray-50 p-6 lg:h-96 rounded-lg flex flex-col justify-between items-center" >
+                  <div className="flex flex-col justify-between items-center">
+                  <h2 class="text-lg xl:text-xl font-bold text-gray-900 title-font mb-4">
+                    {i.title}
+                  </h2>
+                  <p class="leading-relaxed text-base text-center" dangerouslySetInnerHTML={{__html:i.pera}}>
+                  </p>
+                  </div>
+                  <img
+                    class="rounded w-full  mb-6"
+                    src={`/graphic/${i.img}`}
+                    alt="content"
+                  />
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
