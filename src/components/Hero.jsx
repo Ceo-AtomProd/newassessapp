@@ -3,11 +3,84 @@ import Link from "next/link";
 import { TypeAnimation } from "react-type-animation";
 import blogsData from "@/libs/blogData";
 export default function Hero() {
-  const grapicsData = [{img:"2.png",title:"Client and Therapy Type",pera:`From <span class="font-bold-cust">individuals, children, couples</span>, to varied <span class="font-bold-cust">family sizes</span>.`}, {img:"1.png",title:"Formats",pera:`Whether it's <span class="font-bold-cust">intake</span>, a myriad of <span class="font-bold-cust">progress notes (SOAP, DAP, PIRP, SIRP, GIRP, BIRP, PIE)</span>, or service interactions`}, {img:"4.png",title:"Input Methods",pera:`Convert session <span class="font-bold-cust">recordings, dictations</span>, or <span class="font-bold-cust">direct text</span> descriptions into structured notes.`}, {img:"3.png",title:"Customization",pera:`Teach Al how to refer to you and your clients e.g. <span class="font-bold-cust">Client vs Patient, therapist vs Clinician</span>, and many others.`}];
+  const grapicsData = [
+    {
+      img: "2.png",
+      title: "Client and Therapy Type",
+      pera: `From <span class="font-bold-cust">individuals, children, couples</span>, to varied <span class="font-bold-cust">family sizes</span>.`,
+    },
+    {
+      img: "1.png",
+      title: "Formats",
+      pera: `Whether it's <span class="font-bold-cust">intake</span>, a myriad of <span class="font-bold-cust">progress notes (SOAP, DAP, PIRP, SIRP, GIRP, BIRP, PIE)</span>, or service interactions`,
+    },
+    {
+      img: "4.png",
+      title: "Input Methods",
+      pera: `Convert session <span class="font-bold-cust">recordings, dictations</span>, or <span class="font-bold-cust">direct text</span> descriptions into structured notes.`,
+    },
+    {
+      img: "3.png",
+      title: "Customization",
+      pera: `Teach Al how to refer to you and your clients e.g. <span class="font-bold-cust">Client vs Patient, therapist vs Clinician</span>, and many others.`,
+    },
+  ];
   return (
     <>
       {/* hero  */}
-      <section class="text-gray-600 body-font">
+
+      <section className="text-gray-600 w-full body-font py-5 px-2 md:px-0 flex justify-center items-center ">
+        <div className="bg-gray-100 w-full lg:w-5/6 md:p-10 rounded-xl">
+          <div class="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
+            
+            <div class="text-center lg:w-2/3 w-full">
+              <h1 class="title-font text-4xl lg:text-4xl xl:text-5xl mb-4 text-gray-900 font-bold">
+               Automate all your analysis of ✨ <br />
+                <TypeAnimation
+                  sequence={[
+                    // Same substring at the start will only be typed out once, initially
+                    "sessions",
+                    1000, // wait 1s before replacing "Mice" with "Hamsters"
+                    "risk assess",
+                    1000,
+                    "patient profile",
+                    1000,
+                  ]}
+                  wrapper="span"
+                  speed={50}
+                  className="text-blue-600"
+                  repeat={Infinity}
+                />
+              </h1>
+              <p class="mb-8 leading-relaxed font-semibold lg:text-lg xl:text-lg text-base">
+                Get detail report of session and build next session framework of
+                therapy programs in just 5 minutes
+                <br />
+                <span className="font-bold text-xs">Never store any data of user.</span>
+              </p>
+              <div class="flex justify-center">
+                <Link
+                  href="#Try"
+                  class="inline-flex  text-white bg-blue-600 border-0 md:font-semibold md:py-3 md:px-12 px-6 py-2 focus:outline-none hover:bg-blue-700 rounded-full text-lg"
+                >
+                  Try For Free
+                </Link>
+              </div>
+            </div>
+            <div class="w-full flex justify-center items-center mt-5 md:order-2 mb-5 md:mb-0">
+            <Image
+              width={1000}
+              height={1000}
+              priority
+              class="object-cover object-center rounded-lg"
+              alt="hero"
+              src="/hero-main.jpg"
+            />
+          </div>
+          </div>
+        </div>
+      </section>
+      {/* <section class="text-gray-600  body-font">
         <div class="container mx-auto flex px-5 lg:px-20 py-14  md:flex-row flex-col items-center justify-between">
           <div class=" md:w-1/2 w-full  md:order-2 mb-5 md:mb-0">
             <Image
@@ -54,14 +127,13 @@ export default function Hero() {
             </div>
           </div>
         </div>
-      </section>
-
-      
+      </section> */}
 
       {/* try s */}
       <section
         id="Try"
-        class="text-gray-600 w-full body-font py-5 flex justify-center items-center ">
+        class="text-gray-600 w-full body-font py-5 flex justify-center items-center "
+      >
         <div className="bg-gray-100 w-full lg:w-5/6 md:p-10 rounded-lg">
           <div class="container flex px-5 py-5 md:flex-row flex-col items-center ">
             <div class="w-full md:w-1/2 mb-10 md:mb-0 p-5 bg-gray-300 rounded-lg">
@@ -153,13 +225,15 @@ export default function Hero() {
           <div class="flex flex-wrap -m-4">
             {grapicsData.map((i) => (
               <div class="lg:w-1/4 md:w-1/2 w-full p-4">
-                <div class="bg-gray-50 p-6 lg:h-96 rounded-lg flex flex-col justify-between items-center" >
+                <div class="bg-gray-50 p-6 lg:h-96 rounded-lg flex flex-col justify-between items-center">
                   <div className="flex flex-col justify-between items-center">
-                  <h2 class="text-lg xl:text-xl font-bold text-gray-900 title-font mb-4">
-                    {i.title}
-                  </h2>
-                  <p class="leading-relaxed text-base text-center" dangerouslySetInnerHTML={{__html:i.pera}}>
-                  </p>
+                    <h2 class="text-lg xl:text-xl font-bold text-gray-900 title-font mb-4">
+                      {i.title}
+                    </h2>
+                    <p
+                      class="leading-relaxed text-base text-center"
+                      dangerouslySetInnerHTML={{ __html: i.pera }}
+                    ></p>
                   </div>
                   <img
                     class="rounded w-full  mb-6"
@@ -398,73 +472,73 @@ export default function Hero() {
       {/* blogs  */}
 
       <section class="text-gray-600 body-font">
-      <div class="container px-5 md:px-20 py-10 mx-auto">
-        <div class="flex flex-col text-center w-full mb-5">
-          <h1 class="text-4xl md:text-5xl font-medium title-font mb-4 text-gray-900">
-            Our Blogs
-          </h1>
-        </div>
-        <div class="flex w-full flex-wrap md:-m-4 ">
+        <div class="container px-5 md:px-0 lg:px-20 py-10 mx-auto">
+          <div class="flex flex-col text-center w-full mb-5">
+            <h1 class="text-4xl md:text-5xl font-medium title-font mb-4 text-gray-900">
+              Our Blogs
+            </h1>
+          </div>
+          <div class="flex w-full flex-wrap lg:-m-4 ">
+            {blogsData.map((i) => (
+              <div className="w-full md:w-1/3 h-60 md:h-52 lg:h-64 xl:h-80 p-4 " key={i.slug}>
+                <Link href={`/blogs/${i.slug}`} class="relative w-full">
+                  <Image
+                    width={500}
+                    height={500}
+                    class="w-full h-full rounded-lg object-cover object-center absolute "
+                    src={i.img}
+                    alt="blog"
+                  />
+                  <div class="h-full relative bg-black bg-opacity-30 z-10 rounded-lg  ">
+                    <div class="p-4 flex flex-col justify-between items-start h-full">
+                      <h2 class="tracking-widest text-xs title-font font-medium bg-blue-600 rounded-md px-2 py-1 w-fit text-gray-200 mb-1">
+                        {i.category}
+                      </h2>
 
-          {blogsData.map(i=><div className="w-full md:w-1/3 h-60 md:h-80 p-4 " key={i.slug}><Link href={`/blogs/${i.slug}`}  class="relative w-full">
-            
-            
-              <Image
-              width={500}
-              height={500}
-                class="w-full  rounded-lg object-cover object-center absolute "
-                src={i.img}
-                alt="blog"
-              />
-              <div class="h-full relative bg-black bg-opacity-30 z-10 rounded-lg  ">
-              <div class="p-4 flex flex-col justify-between items-start h-full">
-                <h2 class="tracking-widest text-xs title-font font-medium bg-blue-600 rounded-md px-2 py-1 w-fit text-gray-200 mb-1">
-                  {i.category}
-                </h2>
-
-                <div className="items-start ">
-                <h1 class="title-font text-2xl  font-semibold text-gray-100 mb-3">
-                  {i.title}
-                </h1>
-                <div class="flex items-center flex-wrap w-fit">
-                  <span class="text-gray-200 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
-                    <svg
-                      class="w-4 h-4 mr-1"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      fill="none"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      viewBox="0 0 24 24"
-                    >
-                     <path d="M12 2a5 5 0 1 0 5 5 5 5 0 0 0-5-5zm0 8a3 3 0 1 1 3-3 3 3 0 0 1-3 3zm9 11v-1a7 7 0 0 0-7-7h-4a7 7 0 0 0-7 7v1h2v-1a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v1z"></path>
-                    </svg>
-                    {i.author}
-                  </span>
-                  <span class="text-gray-200 inline-flex items-center leading-none text-sm">
-                    <svg
-                      class="w-4 h-4 mr-1"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      fill="none"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      viewBox="0 0 24 24"
-                    >
-                     <path d="M7 11h2v2H7zm0 4h2v2H7zm4-4h2v2h-2zm0 4h2v2h-2zm4-4h2v2h-2zm0 4h2v2h-2z"></path><path d="M5 22h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2h-2V2h-2v2H9V2H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2zM19 8l.001 12H5V8h14z"></path>
-                    </svg>
-                    {i.date}
-                  </span>
-                </div>
-                </div>
+                      <div className="items-start ">
+                        <h1 class="title-font text-base lg:text-2xl  font-semibold text-gray-100 mb-3">
+                          {i.title}
+                        </h1>
+                        <div class="flex items-center flex-wrap w-fit">
+                          <span class="text-gray-200 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
+                            <svg
+                              class="w-4 h-4 mr-1"
+                              stroke="currentColor"
+                              stroke-width="2"
+                              fill="none"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              viewBox="0 0 24 24"
+                            >
+                              <path d="M12 2a5 5 0 1 0 5 5 5 5 0 0 0-5-5zm0 8a3 3 0 1 1 3-3 3 3 0 0 1-3 3zm9 11v-1a7 7 0 0 0-7-7h-4a7 7 0 0 0-7 7v1h2v-1a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v1z"></path>
+                            </svg>
+                            {i.author}
+                          </span>
+                          <span class="text-gray-200 inline-flex items-center leading-none text-sm">
+                            <svg
+                              class="w-4 h-4 mr-1"
+                              stroke="currentColor"
+                              stroke-width="2"
+                              fill="none"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              viewBox="0 0 24 24"
+                            >
+                              <path d="M7 11h2v2H7zm0 4h2v2H7zm4-4h2v2h-2zm0 4h2v2h-2zm4-4h2v2h-2zm0 4h2v2h-2z"></path>
+                              <path d="M5 22h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2h-2V2h-2v2H9V2H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2zM19 8l.001 12H5V8h14z"></path>
+                            </svg>
+                            {i.date}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </Link>
               </div>
-            </div>
-          </Link></div>)}
-
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
-
+      </section>
 
       {/* aibutton  */}
 

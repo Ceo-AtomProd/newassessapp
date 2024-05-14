@@ -3,7 +3,7 @@ const blogsData = [
     slug: "when-likes-become-a-lifeline",
     title: "When Likes Become a Lifeline",
     date: "10 May 2024",
-    category: "blogs",
+    category: "Social Media",
     img: "/blogs/Social.jpg",
     author:"harsh vardhan",
     content: `

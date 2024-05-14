@@ -127,7 +127,7 @@ export default function Index() {
       ) {
         try {
           const image = file64
-            ? await updateImage(selectData.image, file64, file.name, "Worksheet")
+            ? await updateImage(selectData.image, file64, file.name, "Worksheet-new")
             : selectData.image;
           const pdf = file64Pdf ? await updateImage(selectData.pdf, file64Pdf, filePdf.name, "Worksheet-Pdf") : selectData.pdf;
           const updateToast = toast.loading("Please wait...");
@@ -583,7 +583,7 @@ export default function Index() {
         file64
       ) {
         try {
-          const image = await uploadImage(file64, file.name, "Worksheet");
+          const image = await uploadImage(file64, file.name, "Worksheet-new");
           const pdf = await uploadImage(file64Pdf, filePdf.name, "Worksheet-Pdf");
           const createToast = toast.loading("Please wait...");
           await axios({

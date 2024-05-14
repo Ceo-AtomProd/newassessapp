@@ -17,13 +17,13 @@ export default function Blogs() {
         </div>
         <div class="flex w-full flex-wrap md:-m-4 ">
 
-          {blogsData.map(i=><div className="w-full md:w-1/3 h-60 md:h-80 p-4 " key={i.slug}><Link href={`/blogs/${i.slug}`}  class="relative w-full">
+          {blogsData.map(i=><div className="w-full md:w-1/3 h-60 md:h-52 lg:h-64 xl:h-80 p-4 " key={i.slug}><Link href={`/blogs/${i.slug}`}  class="relative w-full">
             
             
               <Image
               width={500}
               height={500}
-                class="w-full  rounded-lg object-cover object-center absolute "
+                class="w-full h-full rounded-lg object-cover object-center absolute "
                 src={i.img}
                 alt="blog"
               />
@@ -34,7 +34,7 @@ export default function Blogs() {
                 </h2>
 
                 <div className="items-start ">
-                <h1 class="title-font text-2xl  font-semibold text-gray-100 mb-3">
+                <h1 class="title-font text-base lg:text-2xl  font-semibold text-gray-100 mb-3">
                   {i.title}
                 </h1>
                 <div class="flex items-center flex-wrap w-fit">
